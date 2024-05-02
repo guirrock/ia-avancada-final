@@ -5,6 +5,7 @@
 #include <cmath>
 #include <chrono>
 #include <vector>
+#include <climits>
 
 // Implementação do construtor da classe Node
 IdaStarNode::IdaStarNode(const std::vector<int>& _state, IdaStarNode* _parent)
