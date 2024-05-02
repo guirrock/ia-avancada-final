@@ -1,0 +1,58 @@
+# Project: main
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o astar.o astarnode.o node.o gbfsnode.o gbfs.o bfs.o bfsnode.o idastar.o idfs.o astar15.o
+LINKOBJ  = main.o astar.o astarnode.o node.o gbfsnode.o gbfs.o bfs.o bfsnode.o idastar.o idfs.o astar15.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+astar.o: astar.cpp
+	$(CPP) -c astar.cpp -o astar.o $(CXXFLAGS)
+
+astarnode.o: astarnode.cpp
+	$(CPP) -c astarnode.cpp -o astarnode.o $(CXXFLAGS)
+
+node.o: node.cpp
+	$(CPP) -c node.cpp -o node.o $(CXXFLAGS)
+
+gbfsnode.o: gbfsnode.cpp
+	$(CPP) -c gbfsnode.cpp -o gbfsnode.o $(CXXFLAGS)
+
+gbfs.o: gbfs.cpp
+	$(CPP) -c gbfs.cpp -o gbfs.o $(CXXFLAGS)
+
+bfs.o: bfs.cpp
+	$(CPP) -c bfs.cpp -o bfs.o $(CXXFLAGS)
+
+bfsnode.o: bfsnode.cpp
+	$(CPP) -c bfsnode.cpp -o bfsnode.o $(CXXFLAGS)
+
+idastar.o: idastar.cpp
+	$(CPP) -c idastar.cpp -o idastar.o $(CXXFLAGS)
+
+idfs.o: idfs.cpp
+	$(CPP) -c idfs.cpp -o idfs.o $(CXXFLAGS)
+
+astar15.o: astar15.cpp
+	$(CPP) -c astar15.cpp -o astar15.o $(CXXFLAGS)
